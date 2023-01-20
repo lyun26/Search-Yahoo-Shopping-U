@@ -433,7 +433,7 @@ class SearchShops(threading.Thread):
         return True
 
 
-class searchItems:
+class searchItems: 
     MAX_RETURNED_RESULTS = 1000 # Yahoo APIの制限。取得できる検索結果の上限
     def __init__(self, keywords:list, appids:list,
                     output:str, max_number:int,
@@ -591,9 +591,10 @@ class searchItems:
 
             # save shops
             searchShopsThread = SearchShops(self.appids[0],
-                                                self.max_number, self.max_shops,
+                                                self.max_number, self.max_shops, self.min_item_per_shop,
                                                 rData, keyword,
                                                 keyword_folder, shop_queue)
+
             searchShopsThread.start()
 
             searchShopsThread.join()

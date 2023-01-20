@@ -102,8 +102,10 @@ def main():
     os.makedirs(args.output, exist_ok=True)
     searchItem = searchItems(keywords, appids, args.output, args.max_number,
                                 max_items_per_xlsx, max_shops, min_item_per_shop)
+
+    
     if args.only_search_store:
-        searchItem.run_only_search_stores()
+        searchItem.run_only_search_stores()  # this code works
     elif args.only_search_item:
         searchItem.run_only_search_items(args.shops_all_path)
     else:
@@ -112,5 +114,4 @@ def main():
 
 
 if __name__ == '__main__':
-    # exit(main())
-    main()
+    exit(main())
